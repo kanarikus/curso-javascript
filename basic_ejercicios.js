@@ -72,7 +72,7 @@ if (birthYear>1995) {
 // de 35200 a 60000€: 37%
 // mas de 60000€: 45%
 
-salario = 20000;
+salario = 70000;
 
 tierC = 12450
 tierB = 20200
@@ -86,13 +86,15 @@ tipo4 = 0.37
 tipo5 = 0.45
 
 if (salario <=tierC) {
-    console.log(salario*tipo1)
+    retencion = (salario*tipo1)
 } else if (salario>tierC && salario<=tierB) {
-    console.log((tierC*tipo1)+((salario-tierC)*tipo2))
+    retencion = ((tierC*tipo1)+((salario-tierC)*tipo2))
 } else if (salario>tierB && salario<=tierA) {
-    console.log(tierC*tipo1+(tierB-tierC)*tipo2+(salario-tierB)*tipo3)
+    retencion = (tierC*tipo1+(tierB-tierC)*tipo2+(salario-tierB)*tipo3)
 } else if (salario>tierA && salario<=tierS) {
-    console.log(tierC*tipo1+(tierB-tierC)*tipo2+(tierA-tierB)*tipo3+(salario-tierA)*tipo4)
+    retencion = (tierC*tipo1+(tierB-tierC)*tipo2+(tierA-tierB)*tipo3+(salario-tierA)*tipo4)
 } else {
-    console.log(tierC*tipo1+(tierB-tierC)*tipo2+(tierA-tierB)*tipo3+(tierS-tierA)*tipo4+(salario-tierS)*tipo5)
+    retencion = (tierC*tipo1+(tierB-tierC)*tipo2+(tierA-tierB)*tipo3+(tierS-tierA)*tipo4+(salario-tierS)*tipo5)
 }
+
+console.log(`La retención aplicada al salario de ${salario} es de ${retencion}`)
